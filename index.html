@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cebu Restaurants Google Map</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/customized.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="layer">
+            <div class="headers-section">
+                <b><h5>Restaurant Type <button class="btn btn-info pull-right" onclick= "resetCircle()" title="Clear Circle"> <i class="fa fa-minus-circle"></i></button></h5></b>
+            </div>
+            <div class="body-cont">
+                <b class="sub-body-cont">Available restaurant type:</b>
+                <select id="types">
+                    <option value="restaurant">All</option>
+                    <option value="cafe">Cafe</option>
+                    <!-- <option value="food">Foods</option> // deprecated-->
+                    <option value="casual dining">Casual Dining</option>
+                    <option value="family style">Family Style</option>
+                    <option value="fine dining">Fine Dining</option>
+                    <option value="bakeshop">Bakery/Bakeshop</option>
+                </select>
+            </div>
+            <div class="headers-section">
+                <b><h5>Area Summarry</h5></b>
+            </div>
+            <div class="body-cont">
+                <p class="overflow-cont-area-summary">
+                    <b>TOTAL RESTAURANTS:</b> <span id="total_restaurants"></span><br>
+                    <b>TOTAL CUSTOMERS:</b> <span id="total_customer_visit"></span><br>
+                    <b>TOTAL SALES:</b> <span id="total_sales"></span>
+                </p>
+            </div>
+            <div class="headers-section">
+                <b><h5>Restaurants</h5></b>
+            </div>
+            <div class="body-cont">
+                <p class="overflow-cont">
+                    <span id="restaurants_list"></span>
+                </p>
+            </div>
+            <div class="headers-section">
+                <b><h5>DIRECTION ROUTES</h5></b>
+            </div>
+            <div class="body-cont">
+                <p id="waze" class="overflow-cont m0" style="font-size:11pt;">Please select your destination.</p>
+            </div>
+        </div>
+        <div id="map"></div>
+        <div id="report"></div>
+    </body>
+</html>
+<script src="resources/js/jquery.min.js"></script>
+<script src="resources/js/customized.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoi-pmZeN1lmVnBspppsLjF7_VbFTmr84&callback=initMap&libraries=places,drawing,visualization"
+  async defer></script>
